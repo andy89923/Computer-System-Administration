@@ -3,7 +3,22 @@
 LoginRank() {
 }
 
+getPortDatail() {
+
+}
+
 PortInfo() {
+    ipv4s=`sockstat -4l | sed -e 1d | awk -F" " '{ print $3 " " $5 "_" $6 }'`;
+    dialog  --title "" \
+            --menu "PORT INFO(PID and Port)" 20 51 35 \
+            ${ipv4s}
+
+    case $? in
+        0)
+            getPortDetail;;
+        *)
+            main;;
+    esac
 }
 
 MountPointInfo() {
@@ -36,8 +51,6 @@ Option() {
         *)
             echo "Error";;
     esac
-
-    rm choose.tmp
 }
 
 main() {
