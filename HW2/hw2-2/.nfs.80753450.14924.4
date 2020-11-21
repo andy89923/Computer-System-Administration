@@ -1,6 +1,16 @@
 # !/bin/sh
 
 LoginRank() {
+    mons=`date +%b`;
+    last | grep $mons | awk -F' ' '{print $1;}' | sed '$d' | sort  > _loginRank.tmp;
+
+
+    uniqs=`uniq < _loginRank.tmp`;
+    for var in $uniqs; do
+	echo $var, `grep $var | wc -l < _loginRank.tmp`;
+    done   
+
+    rm _loginRank.tmp;
 }
 
 getPortDatail() {

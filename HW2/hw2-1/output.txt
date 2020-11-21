@@ -1,0 +1,140 @@
+last pid: 24450;  load averages:  0.33,  0.31,  0.31  up 18+14:17:54    15:06:43
+131 processes: 1 running, 128 sleeping, 1 stopped, 1 zombie
+CPU:  0.4% user,  0.0% nice,  0.7% system,  0.0% interrupt, 98.9% idle
+Mem: 190M Active, 1045M Inact, 11G Wired, 268M Buf, 3825M Free
+ARC: 7441M Total, 4953M MFU, 1777M MRU, 313K Anon, 103M Header, 608M Other
+     6048M Compressed, 13G Uncompressed, 2.22:1 Ratio
+Swap: 2048M Total, 2048M Free
+
+  PID USERNAME    THR PRI NICE   SIZE    RES STATE    C   TIME    WCPU COMMAND
+64818 yhchen0906    1  20    0    42M    32M select   1   0:00   0.00% sshd
+77275 fzhong        1  20    0    41M    31M select   2   0:07   0.00% sshd
+ 9393 changchk07    1  20    0    41M    31M select   2   0:00   0.00% sshd
+86087 changchk07    1  20    0    41M    31M select   3   0:00   0.00% sshd
+42273 swchen0914    1  52    0    41M    31M select   2   0:00   0.00% sshd
+77213 fzhong        1  52    0    41M    31M select   1   0:00   4.90% sshd
+10991 tfchen0923    1  20    0    41M    31M select   2   0:00   0.00% sshd
+64748 yhchen0906    1  20    0    41M    31M select   1   0:00   7.00% sshd
+73263 ycchang       1  20    0    41M    31M select   0   0:00   0.00% sshd
+78874 jbliao        1  52    0    41M    31M select   2   0:00   0.00% sshd
+35648 yutt026       1  20    0    41M    31M select   2   0:01   5.20% sshd
+35389 yutt026       1  20    0    41M    31M select   0   0:01   0.00% sshd
+10005 cmchiang05    1  20    0    41M    31M select   3   0:00   4.40% sshd
+19089 tcyuan        1  52    0    41M    31M select   0   0:00   0.00% sshd
+42338 swchen0914    1  20    0    41M    31M select   0   0:00   0.00% sshd
+ 8670 cmchiang05    1  20    0    41M    31M select   1   0:00   0.00% sshd
+10870 tfchen0923    1  52    0    41M    31M select   2   0:00   0.00% sshd
+ 9299 changchk07    1  52    0    41M    31M select   1   0:00   0.00% sshd
+85993 changchk07    1  52    0    41M    31M select   0   0:00   0.00% sshd
+78965 jbliao        1  20    0    41M    31M select   2   0:06   0.00% sshd
+35541 yutt026       1  52    0    41M    31M select   3   0:00   0.00% sshd
+35185 yutt026       1  52    0    41M    31M select   2   0:00   0.00% sshd
+ 9910 cmchiang05    1  52    0    41M    31M select   1   0:00   0.00% sshd
+19154 tcyuan        1  20    0    41M    31M select   1   0:00   0.00% sshd
+73158 ycchang       1  20    0    41M    31M select   3   0:00   0.00% sshd
+ 8587 cmchiang05    1  52    0    41M    31M select   0   0:00   0.00% sshd
+76899 swchen0914    1  20    0    56M    29M select   2   0:12   0.00% vim
+78690 yutt026       1  20    0    55M    28M select   2   0:08   0.00% vim
+86446 changchk07    1  20    0    55M    28M select   3   0:02   0.00% vim
+76745 chentzj       1  20    0    55M    27M select   2   0:17   0.00% vim
+12659 tfchen0923    1  20    0    55M    27M select   3   0:01   0.00% vim
+  841 root          1  20    0    35M    26M select   0   0:06   12.00% nrpe3
+  763 root          2  20    0    38M    26M select   0  30:50   0.00% vmtoolsd
+  809 ntpd          1  20    0    18M    18M select   3   1:39   0.00% ntpd
+31673 fzhong        1  52    0    23M    14M select   0  36:15   0.00% tmux
+  579 nslcd         6  52    0    33M    12M nanslp   2   3:57   0.00% nslcd
+81809 fzhong        1  20    0    25M    11M select   0   0:06   0.00% mosh-server
+  877 root          1  20    0    19M  9424K select   0   0:13   0.00% sshd
+78966 jbliao        1  52    0    19M  8788K ttyin    2   0:02   0.00% zsh
+62961 weiyuh        1  25    0    18M  8456K ttyin    0   0:01   0.00% zsh
+41186 fzhong        1  20    0    17M  8292K select   2   0:00   0.00% ssh
+36152 fzhong        1  20    0    17M  8208K select   3   0:00   0.00% ssh
+30876 fzhong        1  20    0    17M  8208K select   3   0:00   0.00% ssh
+15536 fzhong        1  20    0    17M  8204K select   0   0:02   0.00% ssh
+39128 fzhong        1  20    0    17M  8196K select   3   0:00   0.00% ssh
+91618 weiyuh        1  22    0    18M  7852K ttyin    0   0:00   0.00% zsh
+53985 fzhong        1  20    0    16M  7644K select   1   0:00   0.00% ssh-agent
+52957 swchen0914    1  20    0    15M  6544K select   2   0:20   0.00% tmux
+36352 yutt026       1  27    0    19M  6396K select   1   0:07   0.00% bash
+15471 fzhong        1  20    0    14M  6164K select   2   0:00   0.00% bash
+  696 root          1  20    0    23M  6100K select   3   0:09   0.00% ypbind
+59313 changchk07    1  23    0    14M  6048K wait     0   0:00   0.00% bash
+15131 fzhong        1  20    0    14M  6016K wait     3   0:00   0.00% bash
+81810 fzhong        1  29    0    14M  6008K wait     3   0:00   0.00% bash
+36119 fzhong        1  20    0    14M  6004K wait     3   0:00   0.00% bash
+19155 tcyuan        1  20    0    14M  5988K select   3   0:00   0.00% bash
+47859 fzhong        1  20    0    14M  5984K wait     1   0:00   0.00% bash
+30782 fzhong        1  36    0    14M  5984K wait     0   0:00   0.00% bash
+77276 fzhong        1  27    0    14M  5980K wait     2   0:00   0.00% bash
+86088 changchk07    1  20    0    14M  5968K select   0   0:00   0.00% bash
+ 9406 changchk07    1  32    0    14M  5968K wait     3   0:00   0.00% bash
+99017 fzhong        1  20    0    14M  5968K select   0   0:01   0.00% bash
+74622 fzhong        1  22    0    14M  5960K select   0   0:01   0.00% bash
+97539 changchk07    1  20    0    14M  5960K select   3   0:00   0.00% bash
+86848 changchk07    1  20    0    14M  5956K select   0   0:00   0.00% bash
+59256 changchk07    1  23    0    14M  5956K wait     3   0:00   0.00% bash
+31674 fzhong        1  20    0    14M  5952K select   2   0:01   0.00% bash
+ 8401 fzhong        1  20    0    14M  5952K select   0   0:02   0.00% bash
+42738 fzhong        1  20    0    14M  5948K select   0   0:01   0.00% bash
+27364 fzhong        1  22    0    14M  5936K select   0   0:02   0.00% bash
+33899 fzhong        1  20    0    14M  5932K wait     2   0:00   0.00% bash
+94998 fzhong        1  20    0    14M  5928K select   0   0:00   0.00% bash
+  929 root          1  20    0    18M  5216K wait     2   0:00   0.00% login
+  930 root          1  20    0    18M  5216K wait     0   0:00   0.00% login
+59244 changchk07    1  20    0    13M  5160K select   0   0:02   0.00% tmux
+33715 tfchen0923    1  20    0    13M  5064K select   1   0:01   0.00% tmux
+62960 weiyuh        1  20    0    13M  4944K select   1   0:02   0.00% tmux
+76645 chentzj       1  20    0    13M  4880K select   2   0:06   0.00% tmux
+73264 ycchang       1  21    0    14M  4864K ttyin    2   0:00   0.00% tcsh
+76771 chentzj       1  20    0    14M  4764K ttyin    2   0:00   0.00% tcsh
+76646 chentzj       1  21    0    14M  4724K pause    2   0:00   0.00% tcsh
+  907 root          1  20    0    17M  4716K select   1   0:00   0.00% inetd
+  880 root          1  20    0    17M  4676K nanslp   1   0:11   0.00% cron
+  948 root          1  20    0    14M  4572K ttyin    2   0:01   0.00% csh
+77299 fzhong        1  20    0    13M  4552K select   1   0:00   0.00% tmux
+81885 fzhong        1  30    0    13M  4552K select   3   0:00   0.00% tmux
+11177 tfchen0923    1  20    0    13M  4548K select   3   0:00   0.00% tmux
+42365 swchen0914    1  32    0    13M  4548K select   1   0:00   0.00% tmux
+ 9485 changchk07    1  32    0    13M  4548K select   1   0:00   0.00% tmux
+52958 swchen0914    1  20    0    13M  4536K pause    0   0:00   0.00% tcsh
+  949 root          1  20    0    14M  4528K ttyin    0   0:00   0.00% csh
+77069 yutt026       1  20    0    13M  4496K wait     3   0:00   0.00% bash
+10032 cmchiang05    1  33    0    13M  4492K select   1   0:00   0.00% bash
+ 8709 cmchiang05    1  20    0    13M  4488K select   2   0:00   0.00% bash
+  740 root          1  20    0   273M  4420K select   3   0:02   0.00% rpc.statd
+52977 swchen0914    1  20    0    13M  4340K pause    0   0:00   0.00% tcsh
+ 8683 cmchiang05    1  32    0    13M  4320K pause    3   0:00   0.00% tcsh
+10006 cmchiang05    1  37    0    13M  4320K pause    2   0:00   0.00% tcsh
+  748 root          1  52    0    17M  4316K rpcsvc   1   0:04   0.00% rpc.lockd
+35649 yutt026       1  20    0    13M  4304K pause    3   0:00   0.00% tcsh
+35390 yutt026       1  20    0    13M  4304K pause    3   0:00   0.00% tcsh
+28496 swchen0914    1  21    0    13M  4296K ttyin    2   0:00   0.00% tcsh
+42345 swchen0914    1  32    0    13M  4292K pause    3   0:00   0.00% tcsh
+23057 changchk07    1  21    0    13M  4248K STOP     3   0:00   0.00% bash
+34931 tfchen0923    1  20    0    13M  4236K pause    2   0:00   0.00% tcsh
+10992 tfchen0923    1  20    0    13M  4224K pause    2   0:00   0.00% tcsh
+35054 tfchen0923    1  20    0    13M  4216K pause    0   0:00   0.00% tcsh
+33905 tfchen0923    1  20    0    13M  4216K pause    0   0:00   0.00% tcsh
+33716 tfchen0923    1  24    0    13M  4216K ttyin    0   0:00   0.00% tcsh
+11819 tfchen0923    1  20    0    13M  4188K pause    0   0:00   0.00% tcsh
+24450 tfchen0923    1  20    0    13M  3540K CPU0     0   0:00   0.00% top
+55073 swchen0914    1  21    0    12M  3528K ttyin    1   0:00   0.00% sh
+35093 tfchen0923    1  20    0    12M  3444K wait     1   0:00   0.00% sh
+34696 tfchen0923    1  20    0    12M  3440K wait     0   0:00   0.00% sh
+11942 tfchen0923    1  20    0    12M  3432K ttyin    2   0:00   0.00% sh
+93986 changchk07    1  52    0    12M  3408K wait     3   0:00   0.00% sh
+35235 tfchen0923    1  20    0    12M  3400K ttyin    0   0:00   0.00% sh
+93997 changchk07    1  20    0    12M  3280K ttyin    0   0:00   0.00% less
+  507 _pflogd       1  20    0    12M  3180K bpf      1   1:20   0.00% pflogd
+  498 root          1  52    0    12M  3176K sbwait   1   0:00   0.00% pflogd
+  586 root          1  20    0    11M  2768K select   2   6:22   0.00% syslogd
+  693 root          1  20    0    11M  2688K select   0   0:04   0.00% rpcbind
+ 3083 root          1  20    0    11M  2580K autofs   2   0:06   0.00% automountd
+  934 root          1  52    0    11M  2428K ttyin    3   0:00   0.00% getty
+  936 root          1  52    0    11M  2428K ttyin    2   0:00   0.00% getty
+  935 root          1  52    0    11M  2428K ttyin    2   0:00   0.00% getty
+  931 root          1  52    0    11M  2428K ttyin    1   0:00   0.00% getty
+  932 root          1  52    0    11M  2428K ttyin    2   0:00   0.00% getty
+  933 root          1  52    0    11M  2428K ttyin    2   0:00   0.00% getty
+  480 root          1  20    0    10M  1540K select   0   2:10   0.00% devd
+
