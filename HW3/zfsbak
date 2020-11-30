@@ -1,0 +1,146 @@
+#!/usr/local/bin/python3
+
+from datetime import datetime, date
+import sys, argparse
+import os
+
+usageStrs = "- create: zfsbak DATASET [ROTATION_CNT]\n" +\
+            "- list: zfsbak -l|--list [DATASET|ID|DATASET ID]\n" +\
+            "- delete: zfsbak -d|--delete [DATASET|ID|DATASET ID]\n" +\
+            "- export: zfsbak -e|--export DATASET [ID]\n" +\
+            "- import: zfsbak -i|--import FILENAME DATASET"
+
+def printUsage():
+    print("Usage:\n" + usageStrs)
+
+def snap(name, time):
+    cmd = "sudo zfs snapshot " + name + "@" +  time
+    
+    # print(" command =", cmd)
+    os.popen(cmd)
+
+    print("Snap " + name + "@" + time)
+    return
+
+def destroy(name):
+    cmd = "sudo zfs destroy " + name
+
+    # print(" command =", cmd)
+    os.popen(cmd)
+
+    print("Destroy", name)
+    return
+
+def createDataset(name, rotation):
+    if (rotation == None):
+        rotation = 20
+    # print("Create Data Set:", name, rotation)
+    
+    # get now date and time
+    current_date = date.today().strftime("%Y-%m-%d")
+    current_time = datetime.now().strftime("%H:%M:%S")
+    
+    # dealine the rotation
+    cmd = "sudo zfs list -s creation -t snapshot | grep " + name
+    allDataSet = os.popen(cmd).readlines()
+
+    cnt = 0
+    for i in allDataSet:
+        cnt += 1
+        if (cnt >= int(rotation)):
+            dataSet = i.split(' ')[0]
+            destroy(dataSet)
+
+    # print("create", name + "@"  + current_date + "-" + current_time)
+    snap(name, current_date + "-" + current_time)
+
+def getListDataset(spec):
+    idNum = 0
+
+    if (len(spec) == 0):
+        # nothing specified
+        cmd = "sudo zfs list -s creation -t snapshot -H"
+    elif (len(spec) == 1 and spec[0].isnumeric()):
+        # just ID specified
+        idNum = spec[0]
+        cmd = "sudo zfs list -s creation -t snapshot -H"
+    else:
+        # DATESET must specified
+        cmd = "sudo zfs list -s creation -t snapshot -H | grep " + spec[0] 
+
+    if (len(spec) == 2):
+        idNum = spec[1]
+    
+    allsnapshot = os.popen(cmd).readlines()
+
+    allString = []
+    cnt = 0
+    for i in allsnapshot:
+        dataset = i.split()[0]
+        name, time = dataset.split('@')
+
+        cnt += 1
+        cnts = "{0:4}".format(str(cnt))
+        name = "{0:15}".format(name)
+        
+        if (idNum == 0 or idNum == str(cnt)):
+            allString.append(cnts + name + time)
+        else:
+            continue
+
+    return allString
+
+def listDataset(spec):
+    print("ID  DATASET        TIME")
+    allString = getListDataset(spec)
+    for i in allString:
+        print(i)
+    
+    return 
+
+def deleteDataset(spec):
+    # print("Delete Dataset:", spec)
+    
+    allString = getListDataset(spec)
+    for i in allString:
+        ims = i.split()
+        nam = ims[1] + "@" + ims[2]
+        destroy(nam)
+
+    return 
+
+
+def main():
+    parser = argparse.ArgumentParser(usage = "\n" + usageStrs)
+    
+    parser.add_argument('create', nargs = '?')              
+    parser.add_argument('rotation_cnt', nargs = '?')        # ? no or one
+    parser.add_argument('--list', '-l',   nargs = '*')      # * >= 0
+    parser.add_argument('--delete', '-d', nargs = '*')
+    parser.add_argument('--export', '-e', nargs = '+')      # + >= 1      
+    parser.add_argument('--import', '-i', nargs =  2 )
+
+    # parser.print_usage()
+    # parser.print_help()
+
+    if (len(sys.argv) == 1):
+        printUsage()
+        parser.exit()
+        return
+    
+    try:
+        args = parser.parse_args()
+    except:
+        printUsage()
+        return
+    
+    if (args.create != None):
+        createDataset(args.create, args.rotation_cnt)
+    if (args.list != None):
+        listDataset(args.list)
+    if (args.delete != None):
+        deleteDataset(args.delete)
+
+
+if __name__ == "__main__":
+    main()

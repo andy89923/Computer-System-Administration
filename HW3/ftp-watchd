@@ -1,0 +1,51 @@
+#!/bin/sh
+ #
+ # PROVIDE: ftp-watchd
+ # REQUIRE: DAEMON pf
+ # KEYWORD: pure-ftpd
+ #
+ # Add the following line to /etc/rc.conf to enable ftp-watchd:
+ #
+ # ftpwatchd_enable="YES"
+ #
+
+. /etc/rc.subr
+
+name="ftpwatchd"
+rcvar="ftpwatchd_enable"
+
+command="/etc/rc.d/ftp-watchd"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+restart_cmd="${name}_restart"
+status_cmd="${name}_status"
+
+
+ftpwatchd_upscrt="";
+load_rc_config $name;
+
+ftpwatchd_start() {
+    echo "Starting ftp-watchd.";
+#    echo "script at ${ftpwatchd_upscrt}";
+
+    /usr/local/sbin/pure-uploadscript -B -r ${ftpwatchd_upscrt};
+    pids=`cat /var/run/pure-uploadscript.pid`;
+}
+
+ftpwatchd_stop() {
+    pids=`cat /var/run/pure-uploadscript.pid`;
+    echo "Kill: ${pids}";
+}
+
+ftpwatchd_restart() {
+	ftpwatchd_stop;
+	ftpwatchd_start;
+}
+
+ftpwatchd_status() {
+    pids=`cat /var/run/pure-uploadscript.pid`;
+	echo "ftp-watchd is running as pid ${pids}.";
+}
+
+run_rc_command "$1"
