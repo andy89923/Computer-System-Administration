@@ -15,8 +15,6 @@ def printUsage():
 
 def snap(name, time):
     cmd = "sudo zfs snapshot " + name + "@" +  time
-    
-    # print(" command =", cmd)
     os.popen(cmd)
 
     print("Snap " + name + "@" + time)
@@ -24,8 +22,6 @@ def snap(name, time):
 
 def destroy(name):
     cmd = "sudo zfs destroy " + name
-
-    # print(" command =", cmd)
     os.popen(cmd)
 
     print("Destroy", name)
@@ -34,7 +30,6 @@ def destroy(name):
 def createDataset(name, rotation):
     if (rotation == None):
         rotation = 20
-    # print("Create Data Set:", name, rotation)
     
     # get now date and time
     current_date = date.today().strftime("%Y-%m-%d")
@@ -51,7 +46,6 @@ def createDataset(name, rotation):
             dataSet = i.split(' ')[0]
             destroy(dataSet)
 
-    # print("create", name + "@"  + current_date + "-" + current_time)
     snap(name, current_date + "-" + current_time)
 
 def getListDataset(spec):
@@ -99,14 +93,11 @@ def listDataset(spec):
     return 
 
 def deleteDataset(spec):
-    # print("Delete Dataset:", spec)
-    
     allString = getListDataset(spec)
     for i in allString:
         ims = i.split()
         nam = ims[1] + "@" + ims[2]
         destroy(nam)
-
     return 
 
 
@@ -122,12 +113,12 @@ def main():
 
     # parser.print_usage()
     # parser.print_help()
-
+    
     if (len(sys.argv) == 1):
         printUsage()
         parser.exit()
         return
-    
+
     try:
         args = parser.parse_args()
     except:
