@@ -16,7 +16,7 @@ nginx_enable="YES"
 ```
 
 */usr/local/etc/nginx/nginx.conf*
-```
+```nginx
 http {
     server_tokens off;    # hide nginx version in header 
 }
@@ -43,7 +43,7 @@ $ sudo sh -c "openssl passwd -apr1 >> .htpasswd"
 ```
 
 */usr/local/etc/nginx/nginx.conf*
-```conf
+```nginx
 location /private {
     auth_basic "restricted";
     auth_basic_user_file /usr/local/etc/nginx/.htpasswd;
@@ -57,7 +57,7 @@ location /private {
 ```
 $ openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout /usr/local/www/sahw4/ssl/sa.key -out /usr/local/www/sahw4/ssl/sa.crt
 ```
-```
+```nginx
 server {
     listen 443 ssl http2;
     
@@ -67,7 +67,7 @@ server {
 }
 ```
 #### Redirect all HTTP requests to HTTPS
-```
+```nginx
 server {
     listen 80;
     return 301 https://$hosts$request_uri;
@@ -77,7 +77,7 @@ server {
 #### HSTS
 [Setup](https://www.nginx.com/blog/http-strict-transport-security-hsts-and-nginx/)
 [Check HSTS](https://ithelp.ithome.com.tw/articles/10248473)
-```
+```nginx
 server {
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 }
@@ -88,7 +88,7 @@ server {
 [X-XSS-Protection & X-Frame](https://wiki.crashtest-security.com/enable-security-headers)
 
 ##### Allow only four HTTP method: GET, HEAD, POST, OPTIONS
-```
+```nginx
 server {
     add_header Access-Control-Allow-Origin "150.nctu.cs" always;
     add_header X-Frame-Options "sameorigin" always;
@@ -136,7 +136,7 @@ listen = /var/run/php74-fpm.sock
 ```
 
 Add another location in *nginx.conf*
-```
+```nginx
 location /info-150.php {
     fastcgi_pass unix:/var/run/php74-fpm.sock;
     fastcgi_index index.php;
@@ -237,7 +237,7 @@ $ sudo pkg install websocketd
 [REF](https://ithelp.ithome.com.tw/questions/10199247)
 
 #### Nginx may eat some paremeter tha ws needed
-```
+```nginx
 location / {
     proxy_pass http://127.0.0.1:8080;
     
