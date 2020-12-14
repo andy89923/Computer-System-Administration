@@ -131,7 +131,7 @@ listen = /var/run/php74-fpm.sock
 ```
 
 */usr/local/www/sahw4/dns/info-150.php*
-```php=1
+```php
 <?php phpinfo(); ?>
 ```
 
@@ -185,7 +185,7 @@ $ mysql -u root -p
 
 ## HTTP Applications
 #### Use only one file: index.php
-```php=
+```php
 <html>
 <body>
 
