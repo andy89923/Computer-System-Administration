@@ -263,3 +263,30 @@ $ sudo rm latest.zip
 [REF](https://kknews.cc/zh-tw/code/6b6jn8q.html)
 [REF](http://hk.uwenku.com/question/p-eqcmpumo-bkx.html)
 
+#### MYSQL User must use native_password
+```
+> CREATE USER 'wdpress'@'localhost' IDENTIFIED WITH mysql_native_password BY '101130150';
+```
+
+
+##### Put mysql info in *wordpress/wp-config.php*
+```php
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define( 'DB_NAME', 'wordpress' );
+
+/** MySQL database username */
+define( 'DB_USER', 'wdpress' );
+
+/** MySQL database password */
+define( 'DB_PASSWORD', '101130150' );
+
+/** MySQL hostname */
+define( 'DB_HOST', 'localhost' );
+
+/** Database Charset to use in creating database tables. */
+define( 'DB_CHARSET', 'utf8' );
+
+/** The Database Collate type. Don't change this if in doubt. */
+define( 'DB_COLLATE', '' );
+```
